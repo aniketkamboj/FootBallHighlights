@@ -11,3 +11,4 @@ This Application brings to you the latest happenings of the football world . Fro
 4. On other terminal window , run the React App . (use commmand -> cd client and then npm start)
 
 # Demo :
+![Alt Text](https://github.com/aniketkamboj/FootBallHighlights/blob/main/CPT2105151711-1076x800.gif)
