@@ -4,6 +4,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.all("/api", (req, res2) => {
+  res2.header('Access-Control-Allow-Origin', '*');
   res2.setHeader("Content-Type", "application/json");
   let finalData = null;
   const puppeteer = require("puppeteer");
@@ -64,28 +65,28 @@ app.all("/api", (req, res2) => {
   })();
 });
 
-if (process.env.NODE_ENV === 'production') {
-  // Set static folder
-  app.use(express.static('client/build'));
-  app.get('/', (req, res) => {
-      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
-  })
+// if (process.env.NODE_ENV === 'production') {
+//   // Set static folder
+//   app.use(express.static('client/build'));
+//   app.get('/', (req, res) => {
+//       res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+//   })
 
-}
+// }
 
-if (process.env.NODE_ENV === 'production') {
-  // Set static folder
-  app.use(express.static('client/build'));
-  app.get('*', (req, res) => {
-      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
-  })
-}
+// if (process.env.NODE_ENV === 'production') {
+//   // Set static folder
+//   app.use(express.static('client/build'));
+//   app.get('*', (req, res) => {
+//       res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+//   })
+// }
 
 
-app.use(express.static(path.join(__dirname, './client/build')))
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, './client/build'))
-})
+// app.use(express.static(path.join(__dirname, './client/build')))
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, './client/build'))
+// })
 app.listen(port, () =>
   console.log(` app listening on port 
 ${port}!`)

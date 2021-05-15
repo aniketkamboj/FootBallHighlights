@@ -9,9 +9,9 @@ function App() {
     console.log('Up and running');
     const requestOptions = {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      // headers: { "Content-Type": "application/json" },
       };
-    fetch('/api', requestOptions)
+    fetch('http://localhost:3000/api', requestOptions)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
