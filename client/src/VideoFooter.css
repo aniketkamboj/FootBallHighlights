@@ -1,0 +1,51 @@
+.videoFooter{
+    position: relative;
+    bottom: 150px;
+    color: black;
+    display: flex;
+    margin-left: 30px;
+    margin-bottom: 0px;
+}
+
+.videoFooter__text{
+    flex: 1;
+}
+
+.videoFooter__text > h1 {
+    
+    font-size: 9000;
+    color: black;
+    font-weight:bolder;
+    /* background-color: black; */
+}
+.videoFooter__text >p{
+    padding-bottom: 20px;
+}
+
+.videoFooter__record{
+    animation: spinTheRecord infinite 5s linear;
+    height: 50px;
+    filter: invert(1);
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+}
+/* .videoFooter__icon{
+    position: absolute;
+}
+.videoFooter__ticker > p {
+    height: fit-content;
+    margin-left: 30px;
+    width: 60%;
+}
+.videoFooter__ticker h1{
+    padding-top: 7px;
+} */
+@keyframes  spinTheRecord{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
